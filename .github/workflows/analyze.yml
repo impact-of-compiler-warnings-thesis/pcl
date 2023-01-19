@@ -18,7 +18,7 @@ jobs:
       - name: Install sonar-scanner and build-wrapper
         uses: SonarSource/sonarcloud-github-c-cpp@v1
       - name: Install Qt
-        uses: jurplel/install-qt-action
+        uses: jurplel/install-qt-action@v3
       - name: Install dependencies
         run: |
           sudo apt update
