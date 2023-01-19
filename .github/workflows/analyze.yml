@@ -23,7 +23,6 @@ jobs:
         run: |
           sudo apt update
           sudo apt install ninja-build \
-                           vtk6 \
                            libboost-all-dev \
                            libeigen3-dev \
                            libflann-dev \
@@ -33,7 +32,7 @@ jobs:
       - name: Generate build files
         run: |
           mkdir build && cd build
-          cmake .. -GNinja -DCMAKE_BUILD_TYPE=Debug
+          cmake .. -GNinja -DCMAKE_BUILD_TYPE=Debug -DWITH_VTK=OFF
       - name: Run build-wrapper
         run: build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} ninja -C build
       - name: Run sonar-scanner
