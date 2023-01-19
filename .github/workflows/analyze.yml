@@ -17,12 +17,18 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Install sonar-scanner and build-wrapper
         uses: SonarSource/sonarcloud-github-c-cpp@v1
+      - name: Install Qt
+        uses: jurplel/install-qt-action
       - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install ninja-build \
                            libeigen3-dev \
-                           libflann-dev
+                           libflann-dev \
+                           libqhull-dev \
+                           libvtk6-dev \
+                           libegl1-mesa-dev \
+                           libpcap0.8-dev
       - name: Generate build files
         run: |
           mkdir build && cd build
