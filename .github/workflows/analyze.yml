@@ -23,10 +23,11 @@ jobs:
         run: |
           sudo apt update
           sudo apt install ninja-build \
+                           vtk6 \
+                           libboost-all-dev \
                            libeigen3-dev \
                            libflann-dev \
                            libqhull-dev \
-                           libvtkdicom0.8 \
                            libegl1-mesa-dev \
                            libpcap0.8-dev
       - name: Generate build files
