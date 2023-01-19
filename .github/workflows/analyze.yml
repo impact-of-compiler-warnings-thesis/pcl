@@ -20,7 +20,9 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install ninja-build
+          sudo apt install ninja-build \
+                           libeigen3-dev \
+                           libflann-dev
       - name: Generate build files
         run: |
           mkdir build && cd build
