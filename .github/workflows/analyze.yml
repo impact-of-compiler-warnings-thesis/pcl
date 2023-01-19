@@ -26,7 +26,7 @@ jobs:
                            libeigen3-dev \
                            libflann-dev \
                            libqhull-dev \
-                           libvtk6-dev \
+                           libvtkdicom0.8 \
                            libegl1-mesa-dev \
                            libpcap0.8-dev
       - name: Generate build files
